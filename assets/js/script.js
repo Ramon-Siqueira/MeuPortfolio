@@ -18,12 +18,15 @@ let cepOk = false;
 
 function validaNome() {
     let txtNome = document.querySelector("#txtNome")
+
     if (nome.value.length < 3) {
-        txtNome.innerHTML = "Nome Inválido!"
+        txtNome.innerHTML = "Nome curto!"
         txtNome.style.color = "red"
+        nomeOk = false;
     } else {
-        txtNome.innerHTML = "Nome Válido!"
+        txtNome.innerHTML = "Ok!"
         txtNome.style.color = "green"
+        nomeOk = true;
         
     }
 }
@@ -34,10 +37,44 @@ function validaEmail() {
         if (email.value.indexOf("@") == -1 || email.value.indexOf(".") == -1) {
             txtEmail.innerHTML = "E-mail Inválido"
             txtEmail.style.color ="red"
+            emailOk = false;
         } else {
-            txtEmail.innerHTML = "E-mail Válido"
+            txtEmail.innerHTML = "Ok"
             txtEmail.style.color ="green"
+            emailOk = true;
+            }
         }
+
+        function validarEmail2() {
+            let regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            let txtEmail = document.querySelector("#txtEmail");
+        
+            if (email.value.match(regex)) {
+                txtEmail.innerHTML = "Ok!";
+                txtEmail.style.color = "green";
+                emailOk = true;
+            } else {
+                txtEmail.innerHTML = "E-mail inválido";
+                txtEmail.style.color = "red";
+                emailOk = false;
+            }
+        }
+        
+        function validarMensagem() {
+            let txtMensagem = document.querySelector("#txtMensagem");
+        
+            if (mensagem.value.length >= 50) {
+                txtMensagem.innerHTML = "Mensagem muito grande!";
+                txtMensagem.style.color = "red";
+                mensagemOk = false;
+            } else {
+                txtMensagem.innerHTML = "Ok!";
+                txtMensagem.style.color = "green";
+                mensagemOk = true;
+            }
+        }
+        
+
         function enviarForm() {
             if (nomeOk === true && emailOk === true && mensagemOk === true) {
                 alert(nome.value + ", obrigado pelo contato, aguarde nosso retorno.");
@@ -92,4 +129,4 @@ function validaEmail() {
                     });
             }
         }
-    }
+    
