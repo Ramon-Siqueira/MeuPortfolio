@@ -27,19 +27,19 @@
 
     <main id="contato">
         <section id="formulario_mensagem">
-            <h3>Contato</h2>
+            <h2>Contato</h2>
                 <form>
                     <div class="campos-form">
                         <label for="nome">Nome:</label>
                         <input id="nome" name="nome" type="text"
-                            placeholder="Insira o seu nome completo">
+                            placeholder="Insira o seu nome completo" onkeyup="validaNome()">
                         <div id="txtNome"></div>
                     </div>
 
                     <div class="campos-form">
                         <label for="email">E-mail:</label>
                         <input id="email" name="email" type="text"
-                            placeholder="Insira o seu e-mail">
+                            placeholder="Insira o seu e-mail" onkeyup="validaEmail()">
                         <div id="txtEmail"></div>
                     </div>
 
@@ -95,6 +95,8 @@
         </div>
         <p class="by">Desenvolvido por Ramon - 2023 &copy;</p>
     </footer>
+
+    <script src="assets/js/script.js"></script>
 
 </body>
 
