@@ -4,28 +4,33 @@
 /*Definição das Variáveis do CSS*/
 :root {
     /*Cores de Fundo (Background)*/
-    --background-page: #FFF9E7;
-    --background-nav: #ac9582;
-    --background-sobre: #e5e8eb;
-    --background-footer: #29282B;
+    --background-page: #080808;
+    --background-nav: #777271;
+    --background-sobre: #0e2130;
+    --background-footer: #b2b9bd;
     
 
     /* Cores das Fontes (texto) */
-    --cor-fonte-padrao: #000000;
-    --cor-fonte-nav: #FFFFFF;
-    --cor-fonte-by: orange;
-    --cor-fonte-button-hover: yellow;
+    --cor-fonte-padrao: #cfcbc1;
+    --cor-fonte-nav: #0c0000;
+    --cor-fonte-by: rgb(27, 25, 21);
+    --cor-fonte-button-hover: rgb(36, 36, 34);
 
     /* Fontes da Página */
     --lato-roboto: 'lato', Roboto;
     --lato-cursiva: 'lato', cursive;
 
     /* Cores de Efeito */
-    --cor-sombra: #C0C0C0;
+    --cor-sombra: #bfbdca;
     --cor-sombra-hover: #191970;
-    --cor-button-hover: #191970;
-    --cor-placeholder-effect: #191970;
+    --cor-button-hover: #aae781;
+    --cor-placeholder-effect: #0a0a0f;
 }
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }  
 
 /* Zera todas as configurações da tela do Navegador 
 O seletor * aplica para todos os elementos*/
@@ -39,6 +44,11 @@ O seletor * aplica para todos os elementos*/
     /* Define a largura e a altura total 
     da tela incluindo as bordas*/
     box-sizing: border-box;
+}
+
+#Whastapp {
+    display: flex;
+    justify-content: center;
 }
 
 /* Define todas as configurações do Corpo da página */
@@ -117,6 +127,7 @@ a:hover {
 nav {
     margin: 0 auto;
     width: 80vw;
+    border-radius: 1rem;
 
     /* Exibe os itens na tela no modo flex */
     display: flex;
@@ -138,12 +149,14 @@ nav a,
     color: var(--cor-fonte-nav);
     letter-spacing: 3px;
     font-weight: 800;
+    
 }
 
 /* Define configurações específicas a classe logo */
 .logo {
     display: flex;
-    width: 20%;
+    max-width: 100%;
+    height: auto;
     justify-content: left;
     gap: 0.5rem;
     align-items: center;
@@ -223,6 +236,7 @@ footer {
     padding-top: 1rem;
     padding-bottom: 0;
     display: flex;
+    border-radius: 1rem;
 
     /* Alinha os elementos um em cada linha */
     flex-direction: column;
